@@ -76,7 +76,7 @@ class StarRating {
 	/**
 	 * Enqueues the star-rating assets for frontend use
 	 *
-	 * @return object Instance of this class
+	 * @return void
 	 */
 	public function enqueue_assets() {
 		if ( ! is_admin() ) {
