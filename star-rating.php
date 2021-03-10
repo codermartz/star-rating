@@ -40,9 +40,6 @@ class StarRating {
 	// Minimum WP version required to run this plugin
 	const WP_REQUIRED = '5.6';
 
-	// Text domain
-	const TEXT_DOMAIN = 'star-rating';
-
 	// Static property of this class that will hold the singleton instance of this class
 	protected static $instance = null;
 
@@ -108,13 +105,13 @@ class StarRating {
 
 		if ( version_compare( PHP_VERSION, self::PHP_REQUIRED, '<' ) ) {
 			deactivate_plugins( STAR_RATING_PLUGIN );
-			wp_die( __( $data['Name'] . ' requires PHP version ' . self::PHP_REQUIRED . ' or greater.', self::TEXT_DOMAIN ) );
+			wp_die( __( $data['Name'] . ' requires PHP version ' . self::PHP_REQUIRED . ' or greater.', 'star-rating' ) );
 		}
 
 		include ABSPATH . WPINC . '/version.php';
 		if ( version_compare( $wp_version, self::WP_REQUIRED, '<' ) ) {
 			deactivate_plugins( STAR_RATING_PLUGIN );
-			wp_die( __( $data['Name'] . ' requires WordPress version ' . self::WP_REQUIRED . ' or greater.', self::TEXT_DOMAIN ) );
+			wp_die( __( $data['Name'] . ' requires WordPress version ' . self::WP_REQUIRED . ' or greater.', 'star-rating' ) );
 		}
 	}
 }
